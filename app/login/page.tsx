@@ -21,8 +21,6 @@ export default function LoginPage() {
         });
 
         if (res.ok) {
-            const data = await res.json();
-            localStorage.setItem('token', data.token);
             router.push('/dashboard');
         } else {
             const data = await res.json();
@@ -44,7 +42,6 @@ export default function LoginPage() {
                         {error}
                     </p>
                 )}
-
                 <div>
                     <label className="block text-sm font-medium mb-1">
                         Email
@@ -57,7 +54,6 @@ export default function LoginPage() {
                         required
                     />
                 </div>
-
                 <div>
                     <label className="block text-sm font-medium mb-1">
                         Password
@@ -70,7 +66,6 @@ export default function LoginPage() {
                         required
                     />
                 </div>
-
                 <button
                     type="submit"
                     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
